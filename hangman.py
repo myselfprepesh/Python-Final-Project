@@ -1,15 +1,8 @@
 import random
 
 file = open("word.txt", "r")
-lWordList = file.readlines
-lwordList1 = []
-for line in lWordList:
-        number = 0
-        while number < 5:
-            lWordList1.append(str(item)+str(number))
-            number = number + 1
-            print (lWordList1)
-# lWordList = ["able", "about","account","acid","across","act","addition","adjustment"]
+lWordList = file.read().splitlines()
+print (lWordList)
 random.shuffle(lWordList)
 
 sRealWord = lWordList[0].upper()
@@ -62,5 +55,5 @@ while True:
 
     if iRightGuesses == len(lShownWord.replace(" ", "")):
         print(str(lShownWord).replace(" ", ""))
-        print("you have won")
+        print("You have won")
         break
